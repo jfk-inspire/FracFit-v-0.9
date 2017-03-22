@@ -20,7 +20,7 @@ end
 global STABLE_LIBRARY;  %0 = Nolan, 1= Veillette, 2 = Matlab Statistics
 global OPTIM_FUNCTION;  % 0 = lsqnonlin, 1 = ga (genetic algorithm)
 
-STABLE_LIBRARY = 0;
+STABLE_LIBRARY = 2;
 OPTIM_FUNCTION = 0; 
 
 % Set up paths to the stable library
