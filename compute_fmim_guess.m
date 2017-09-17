@@ -1,5 +1,7 @@
 function theta0 = compute_fmim_guess(data)
 
+global STABLE_LIBRARY; 
+
 tobs = data.tobs; cobs = data.cobs;
 
 
@@ -27,7 +29,12 @@ tmed = tobs(imed);
 % Mode and Median for standard stable
 gamma = 0.75;
 skewfac = (cos(pi*gamma/2)).^(1/gamma);
-mode0 = stablemode([gamma 1 skewfac 0],1);
+if (STABLE_LIBRARY == 0)
+    mode0 = stablemode([gamma 1 skewfac 0],1);
+else 
+    mode0 = mystablemode([gamma 1 skewfac 0]);
+end    
+
 median0 = stableinv(0.5,[gamma 1 skewfac 0],1);
 
 %Estimate velocity
