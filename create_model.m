@@ -39,8 +39,8 @@ end
 
 
 
-if verLessThan('globaloptim','R2006')
-        error('Global Optimization Toolbox for R2006 or later required');
+if (OPTIM_FUNCTION == 1 & verLessThan('globaloptim','R2006'))
+        error('Global Optimization Toolbox for R2006 or later required for genetic algorithm (ga)');
 end 
 
 
