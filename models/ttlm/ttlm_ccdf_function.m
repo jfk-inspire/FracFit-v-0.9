@@ -43,9 +43,8 @@ skew_factor = abs(cos(pi*gamma1/2.0)).^(1/gamma1);
 scale = (beta*u).^(1/gamma1);
 theta_tilde = [gamma1 1  skew_factor 0];
  if (gamma1 > 0.2)
-     y11 = (1./scale) .* stableqkpdf((t - u)./scale,theta_tilde,1);
+     y11 = (1./scale) .* spdf((t - u)./scale,theta_tilde);
  else
-y11 = (1./scale) .* stablepdf((t - u)./scale,theta_tilde,1);
  end
 expfac = -lambda.*t + u .*beta.*lambda^gamma1;
 y1 = y11 .* exp(expfac);
